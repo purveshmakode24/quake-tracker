@@ -27,7 +27,7 @@ class App extends Component {
         // });
 
 
-        //----> Below selectedData is a selected properties from a whole json data which returns a dictionary of each quake   
+        ////----> Below selectedData is a selected properties from a whole json data which returns a dictionary of each quake   
 
         const selectedData = res.data.features.map(quake => {
           return {

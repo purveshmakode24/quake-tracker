@@ -10,13 +10,13 @@ class MapComponent extends Component {
   render() {
 
     const customIcon = new Icon({
-      iconUrl: require('../assets/red-marker.png'),
+      iconUrl: require('../assets/red-marker.png'),     // red-marker for severe alert
       iconSize: [30, 41]
     });
 
 
     const quakeFeaturesMarker = this.props.quakes.map(quake => {
-      const position = [quake.position[1], quake.position[0]];    //react-leaflet coordinate position format is [lat, lng]
+      const position = [quake.position[1], quake.position[0]];    // react-leaflet coordinate position format is [lat, lng]
       if (quake.magnitude >= 5) {
         return (
           <Marker key={quake.id} position={position} icon={customIcon}>
