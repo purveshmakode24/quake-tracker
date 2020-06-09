@@ -2,6 +2,8 @@
 
 Real-time Earthquake visualization app in React
 
+> Additional Features like filtering based on magnitude and time is coming soon!
+
 ## Available Scripts
 
 In the project directory, you can run:
