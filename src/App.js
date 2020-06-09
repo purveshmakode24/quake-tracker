@@ -10,7 +10,6 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      zoom: 3,
       defaultEarthquakesData: [],  // [{}, {}, {},----]
       serverNotConnectedMsg: '',
       isLoaded: false
