@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/quake-tracker/static/css/main.6b784630.chunk.css",
+    "main.js": "/quake-tracker/static/js/main.dd6021df.chunk.js",
+    "main.js.map": "/quake-tracker/static/js/main.dd6021df.chunk.js.map",
+    "runtime-main.js": "/quake-tracker/static/js/runtime-main.c96aa38b.js",
+    "runtime-main.js.map": "/quake-tracker/static/js/runtime-main.c96aa38b.js.map",
+    "static/css/2.af3c1da9.chunk.css": "/quake-tracker/static/css/2.af3c1da9.chunk.css",
+    "static/js/2.814887fc.chunk.js": "/quake-tracker/static/js/2.814887fc.chunk.js",
+    "static/js/2.814887fc.chunk.js.map": "/quake-tracker/static/js/2.814887fc.chunk.js.map",
+    "index.html": "/quake-tracker/index.html",
+    "precache-manifest.7344aae223bce7770fc307d37a4892c7.js": "/quake-tracker/precache-manifest.7344aae223bce7770fc307d37a4892c7.js",
+    "service-worker.js": "/quake-tracker/service-worker.js",
+    "static/css/2.af3c1da9.chunk.css.map": "/quake-tracker/static/css/2.af3c1da9.chunk.css.map",
+    "static/css/main.6b784630.chunk.css.map": "/quake-tracker/static/css/main.6b784630.chunk.css.map",
+    "static/js/2.814887fc.chunk.js.LICENSE.txt": "/quake-tracker/static/js/2.814887fc.chunk.js.LICENSE.txt",
+    "static/media/red-marker.png": "/quake-tracker/static/media/red-marker.6ce3ca72.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c96aa38b.js",
+    "static/css/2.af3c1da9.chunk.css",
+    "static/js/2.814887fc.chunk.js",
+    "static/css/main.6b784630.chunk.css",
+    "static/js/main.dd6021df.chunk.js"
+  ]
+}
