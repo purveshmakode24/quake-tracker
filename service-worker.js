@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/quake-tracker/precache-manifest.7344aae223bce7770fc307d37a4892c7.js"
+  "/quake-tracker/precache-manifest.4144d879ef8635f4760e6d793657adca.js"
 );
 
 self.addEventListener('message', (event) => {
