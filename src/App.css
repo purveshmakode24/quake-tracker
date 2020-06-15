@@ -31,10 +31,13 @@ code {
   text-align: center;
 }
 
-/* .map-section {
-  height: 100vh;
-  width: 100%;
-} */
+.nav-followlnk-span {
+  font-size: 10px
+}
+
+.nav-followlnk-span a {
+  color: black;
+}
 
 .map__section {
   height: 100vh;

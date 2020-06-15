@@ -5,7 +5,7 @@ class Header extends Component {
         return (
             <header className="quake_header">
                 <h1 className="navbar__h1">QuakeTracker</h1>
-                <p className="navbar__p">Visualize the Earthquake in real-time</p>
+                <p className="navbar__p">Visualize the Earthquake in Real-Time<br/><span className="nav-followlnk-span"><a href="https://purveshmakode.com">Made w/ &#10084; by PM</a></span></p>
             </header>
         )
     }
