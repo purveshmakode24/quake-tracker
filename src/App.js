@@ -45,6 +45,10 @@ class App extends Component {
           }
         });
 
+        console.log(res.data.features);
+
+        console.log(selectedData);
+
         this.setState({
           defaultEarthquakesData: selectedData,
           isLoaded: true
@@ -52,7 +56,7 @@ class App extends Component {
 
       })
       .catch(error => {
-        this.setState({ serverNotConnectedMsg: "Can't fetch data at this moment", isLoaded: 'true' });
+        this.setState({ serverNotConnectedMsg: "Can't fetch data at this moment. Check your internet connection and try again.", isLoaded: 'true' });
         console.log(error);
         alert("We couldn't reach our servers. You may not be connected to internet. Please try again...");
       })
@@ -66,6 +70,8 @@ class App extends Component {
 
     if (!this.state.isLoaded) {
       mapSection = "Loading...";
+    } else if(this.state.serverNotConnectedMsg) {
+      mapSection = this.state.serverNotConnectedMsg;
     } else {
       mapSection = <MapComponent quakes={this.state.defaultEarthquakesData} />;
     }
