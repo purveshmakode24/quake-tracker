@@ -45,10 +45,6 @@ class App extends Component {
           }
         });
 
-        console.log(res.data.features);
-
-        console.log(selectedData);
-
         this.setState({
           defaultEarthquakesData: selectedData,
           isLoaded: true
@@ -62,15 +58,13 @@ class App extends Component {
       })
   }
 
-
-
   render() {
 
     let mapSection;
 
     if (!this.state.isLoaded) {
       mapSection = "Loading...";
-    } else if(this.state.serverNotConnectedMsg) {
+    } else if (this.state.serverNotConnectedMsg) {
       mapSection = this.state.serverNotConnectedMsg;
     } else {
       mapSection = <MapComponent quakes={this.state.defaultEarthquakesData} />;
@@ -86,7 +80,6 @@ class App extends Component {
     )
   }
 }
-
 
 
 export default App;
