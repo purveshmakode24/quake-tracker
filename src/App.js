@@ -4,6 +4,7 @@ import './App.css';
 
 import Header from './components/Header';
 import MapComponent from './components/MapComponent';
+import Filter from './components/Filter';
 
 
 class App extends Component {
@@ -11,6 +12,7 @@ class App extends Component {
     super(props);
     this.state = {
       defaultEarthquakesData: [],  // [{}, {}, {},----]
+      filterData: '',
       serverNotConnectedMsg: '',
       isLoaded: false
     }
@@ -45,10 +47,18 @@ class App extends Component {
           }
         });
 
+        // console.log("Selected Data:", selectedData);
+        // console.log("Selected Data length:", selectedData.length);
+
+
+
         this.setState({
           defaultEarthquakesData: selectedData,
           isLoaded: true
         });
+
+        // console.log(this.state.defaultEarthquakesData);
+        // console.log(this.state.filterData);
 
       })
       .catch(error => {
@@ -57,6 +67,25 @@ class App extends Component {
         alert("We couldn't reach our servers. You may not be connected to internet. Please try again...");
       })
   }
+
+
+  // state data from child component (Filter.jsx)
+  fetchDataFromFilterJsx = (data) => {
+    this.setState({ isLoaded: false }, () => {
+      // console.log("Passed filter Data from Child(Filter.jsx) to Parent(App.js):", data.magnitudeFilter);
+
+      const filteredData = this.state.defaultEarthquakesData.filter(quake => quake.magnitude > data.magnitudeFilter);
+      // console.log("filterData:", filteredData);
+
+      this.setState({
+        filterData: filteredData,
+        isLoaded: true
+      });
+
+    });
+  }
+
+
 
   render() {
 
@@ -67,12 +96,21 @@ class App extends Component {
     } else if (this.state.serverNotConnectedMsg) {
       mapSection = this.state.serverNotConnectedMsg;
     } else {
-      mapSection = <MapComponent quakes={this.state.defaultEarthquakesData} />;
+      if (this.state.filterData) {
+        mapSection = <MapComponent quakes={this.state.filterData} />;
+        console.log("filtered quake data executed");
+      } else {
+        console.log("default quake data executed");
+        mapSection = <MapComponent quakes={this.state.defaultEarthquakesData} />;
+
+      }
     }
+
 
     return (
       <div>
         <Header />
+        <Filter fetchFilterData={this.fetchDataFromFilterJsx} />
         <div className="map__section">
           {mapSection}
         </div>

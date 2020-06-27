@@ -57,3 +57,37 @@ code {
   color: rgba(29,161,242,1.0);
 }
 
+.filter_sec {
+  position: absolute;
+  z-index: 1000;
+  background-color: rgba(29,161,242,1.0);
+  padding: 70px 50px 5px 40px;
+  margin: 100px 0 0 10px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.65);
+}
+
+.toggle__filter {
+  position: absolute;
+  z-index: 2000;
+  background-color: rgb(38, 38, 245);
+  color:blanchedalmond;
+  padding: 15px;
+  margin: 100px 0 0 10px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.65);
+  border-radius: 0px 0px 25px 0px;
+  cursor: pointer;
+}
+
+.display_none {
+  display: none;
+}
+
+.filter__header {
+  font-size: 20px;
+  padding-bottom: 5px;
+}
+
+.filter__sec__notice {
+  font-size: 12px;
+  padding-top: 18px;
+}

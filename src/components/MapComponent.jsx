@@ -17,7 +17,7 @@ class MapComponent extends Component {
 
     const quakeFeaturesMarker = this.props.quakes.map(quake => {
       const position = [quake.position[1], quake.position[0]];    // react-leaflet coordinate position format is [lat, lng]
-      if (quake.magnitude >= 5) {
+      if (quake.magnitude >= 6) {
         return (
           <Marker key={quake.id} position={position} icon={customIcon}>
             <Popup>
