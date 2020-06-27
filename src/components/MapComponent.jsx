@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
+import { Map, TileLayer, Marker, Popup, AttributionControl } from 'react-leaflet';
 
 import { Icon } from "leaflet";
 
@@ -56,10 +56,9 @@ class MapComponent extends Component {
         scrollWheelZoom={false}
         attributionControl={false}
       >
-
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+        <AttributionControl prefix="<a href='https://purveshmakode.com'>Purvesh Makode</a>" />
         {quakeFeaturesMarker}
-
       </Map >
     );
   }

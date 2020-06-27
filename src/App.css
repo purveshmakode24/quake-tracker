@@ -19,12 +19,12 @@ code {
 .quake_header {
   background-color: rgba(29,161,242,1.0);
   padding: 1px;
-  margin-bottom: -4px;
+  margin-bottom: -6px;
 }
 
 .navbar__h1 {
   text-align: center;
-  padding-top: 7px;
+  padding-top: 9px;
 }
 
 .navbar__p {
@@ -90,4 +90,8 @@ code {
 .filter__sec__notice {
   font-size: 12px;
   padding-top: 18px;
+}
+
+.preload_message {
+  padding: 10px;
 }
