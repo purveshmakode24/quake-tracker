@@ -2,7 +2,9 @@
 
 Real-time Earthquake visualization app in React
 
-> Additional Features like filtering based on magnitude and time is coming soon!
+> Used React-Leaflet package for map display and USGS's API for Earthquake data.
+
+> App Live running at [https://www.quaketracker.gq](https://www.quaketracker.gq)
 
 ## Available Scripts
 
