@@ -96,3 +96,15 @@ code {
 .preload_message {
   padding: 10px;
 }
+
+
+@media(max-width: 500px) {
+  .navbar__h1 {
+    font-size: 30px;
+  }
+
+  .navbar__p {
+    font-size: 12px;
+    margin-top: -5px;
+  }
+}
