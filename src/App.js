@@ -50,15 +50,12 @@ class App extends Component {
         // console.log("Selected Data:", selectedData);
         // console.log("Selected Data length:", selectedData.length);
 
-
-
         this.setState({
           defaultEarthquakesData: selectedData,
           isLoaded: true
         });
 
         // console.log(this.state.defaultEarthquakesData);
-        // console.log(this.state.filterData);
 
       })
       .catch(error => {
@@ -71,11 +68,24 @@ class App extends Component {
 
   // state data from child component (Filter.jsx)
   fetchDataFromFilterJsx = (data) => {
-    this.setState({ isLoaded: false }, () => {
-      // console.log("Passed filter Data from Child(Filter.jsx) to Parent(App.js):", data.magnitudeFilter);
 
-      const filteredData = this.state.defaultEarthquakesData.filter(quake => quake.magnitude > data.magnitudeFilter);
+    var filteredData;
+
+    this.setState({ isLoaded: false }, () => {
+      // console.log("Passed MAGNITUDE filter Data from Child(Filter.jsx) to Parent(App.js):", data.magnitudeFilter);
+      // console.log("Passed TIME filter Data from Child(Filter.jsx) to Parent(App.js):", data.timeFilter);
+      // console.log("current time:", new Date().getTime());
+      // console.log("time EPOCH for last hour:", new Date().getTime() - parseInt(data.timeFilter, 10));
+
+      if (parseInt(data.timeFilter) === 0) {
+        filteredData = this.state.defaultEarthquakesData.filter(quake => quake.magnitude > data.magnitudeFilter);
+      } else {
+        filteredData = this.state.defaultEarthquakesData.filter(quake => quake.magnitude > data.magnitudeFilter && quake.time > new Date().getTime() - parseInt(data.timeFilter, 10));
+      }
+
+
       // console.log("filterData:", filteredData);
+      // console.log("filterDataLength:", filteredData.length);
 
       this.setState({
         filterData: filteredData,
@@ -99,10 +109,9 @@ class App extends Component {
       if (this.state.filterData) {
         mapSection = <MapComponent quakes={this.state.filterData} />;
         console.log("filtered quake data executed");
-      } else {
-        console.log("default quake data executed");
+      } else {   
         mapSection = <MapComponent quakes={this.state.defaultEarthquakesData} />;
-
+        console.log("default quake data executed");
       }
     }
 

@@ -9,14 +9,13 @@ class Filter extends Component {
         this.state = {
             filterIsOpenAddDisplayClass: false,
             magnitudeFilter: -1,
-            timeFilter: null,
+            timeFilter: 0,
         }
 
         this.toggleFilter = this.toggleFilter.bind(this);
         this.magnitudeChangeHandler = this.magnitudeChangeHandler.bind(this);
-
+        this.timeChangeHandler = this.timeChangeHandler.bind(this);
     }
-
 
     toggleFilter() {
         this.setState({
@@ -24,17 +23,22 @@ class Filter extends Component {
         });
     }
 
-
     magnitudeChangeHandler(event) {
-        // console.log("Filter Touch:", this.state.magnitudeFilter);
         this.setState({
             magnitudeFilter: event.target.value
         });
     }
 
+    timeChangeHandler(event) {    
+        this.setState({
+            timeFilter: event.target.value
+        });
+    }
 
     componentDidUpdate(prevProps, prevState) {   // This life cycle method is used to pass state data into parent component (App.js)
         if (this.state.magnitudeFilter !== prevState.magnitudeFilter) {
+            this.props.fetchFilterData(this.state);
+        }else if(this.state.timeFilter !== prevState.timeFilter) {
             this.props.fetchFilterData(this.state);
         }
     }
@@ -65,10 +69,8 @@ class Filter extends Component {
                     </Form>
                     <Form>
                         <FormGroup>
-                            {/* <Label className="filter__header" for="exampleCheckbox">Filter</Label> */}
-                            <CustomInput type="radio" id="last2days" name="customRadio" defaultChecked label="Last 30 Hours (≈ 2 days)" disabled />
-                            {/* <CustomInput type="radio" id="last10days" name="customRadio" label="Last 10 days" disabled />
-                            <CustomInput type="radio" id="last30days" name="customRadio" label="Last 30 days" disabled /> */}
+                            <CustomInput type="radio" id="last2days" name="timefilter" value={0} label="Last 30 Hours (≈ 2 days)" checked={parseInt(this.state.timeFilter, 10) === 0} onChange={this.timeChangeHandler} />
+                            <CustomInput type="radio" id="lasthour" name="timefilter" value={3600000} label="Last Hour" checked={parseInt(this.state.timeFilter, 10) === 3600000} onChange={this.timeChangeHandler} />
                             <hr />
                             <p className="filter__sec__notice">*defaults to 'last 30 hours (≈ 2 days)' <br />*defaults to 'All' magnitude <br />📍 Earthquakes with &gt;6 magnitude</p>
                         </FormGroup>
@@ -78,5 +80,6 @@ class Filter extends Component {
         )
     }
 }
+
 
 export default Filter;

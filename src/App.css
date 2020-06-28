@@ -90,6 +90,7 @@ code {
 .filter__sec__notice {
   font-size: 12px;
   padding-top: 18px;
+  padding-bottom: 2px;
 }
 
 .preload_message {
