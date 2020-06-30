@@ -57,7 +57,7 @@ class MapComponent extends Component {
         attributionControl={false}
       >
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-        <AttributionControl prefix="<a href='https://purveshmakode.com'>Purvesh Makode</a>" />
+        <AttributionControl prefix="< /> w/ &#10084; by <a href='https://purveshmakode.com'>Purvesh Makode</a>" />
         {quakeFeaturesMarker}
       </Map >
     );
