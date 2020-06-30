@@ -56,14 +56,14 @@ class Filter extends Component {
         return (
             <>
                 <div className="toggle__filter" onClick={this.toggleFilter}>
-                    Filter
+                    Filters
                 </div>
                 <div className={filter_sec_class_list.join(' ')}>
                     <Form>
                         <FormGroup>
                             <CustomInput type="radio" id="magGreaterThan0" name="mag" value={-1} label="All" checked={parseInt(this.state.magnitudeFilter, 10) === -1} onChange={this.magnitudeChangeHandler} />
-                            <CustomInput type="radio" id="magGreaterThan3" name="mag" value={3.5} label="Maginitude > 3.5" checked={parseFloat(this.state.magnitudeFilter) === 3.5} onChange={this.magnitudeChangeHandler} />
-                            <CustomInput type="radio" id="magGreaterThan6" name="mag" value={6} label="Maginitude > 6" checked={parseInt(this.state.magnitudeFilter, 10) === 6} onChange={this.magnitudeChangeHandler} />
+                            <CustomInput type="radio" id="magGreaterThan3" name="mag" value={3.5} label="Magnitude > 3.5" checked={parseFloat(this.state.magnitudeFilter) === 3.5} onChange={this.magnitudeChangeHandler} />
+                            <CustomInput type="radio" id="magGreaterThan6" name="mag" value={6} label="Magnitude > 6" checked={parseInt(this.state.magnitudeFilter, 10) === 6} onChange={this.magnitudeChangeHandler} />
                         </FormGroup>
                         <hr />
                     </Form>
