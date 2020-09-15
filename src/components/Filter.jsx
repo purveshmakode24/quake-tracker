@@ -29,7 +29,7 @@ class Filter extends Component {
         });
     }
 
-    timeChangeHandler(event) {    
+    timeChangeHandler(event) {
         this.setState({
             timeFilter: event.target.value
         });
@@ -38,7 +38,7 @@ class Filter extends Component {
     componentDidUpdate(prevProps, prevState) {   // This life cycle method is used to pass state data into parent component (App.js)
         if (this.state.magnitudeFilter !== prevState.magnitudeFilter) {
             this.props.fetchFilterData(this.state);
-        }else if(this.state.timeFilter !== prevState.timeFilter) {
+        } else if (this.state.timeFilter !== prevState.timeFilter) {
             this.props.fetchFilterData(this.state);
         }
     }
@@ -72,7 +72,7 @@ class Filter extends Component {
                             <CustomInput type="radio" id="last2days" name="timefilter" value={0} label="Last 30 Hours" checked={parseInt(this.state.timeFilter, 10) === 0} onChange={this.timeChangeHandler} />
                             <CustomInput type="radio" id="lasthour" name="timefilter" value={3600000} label="Last Hour" checked={parseInt(this.state.timeFilter, 10) === 3600000} onChange={this.timeChangeHandler} />
                             <hr />
-                            <p className="filter__sec__notice">*Defaults to 'last 30 hours'. <br />*Defaults to 'All' magnitude. <br />📍 Earthquakes with &#8805; 6 magnitude.</p>
+                            <p className="filter__sec__notice">*Defaults to 'Last 30 hours'. <br />*Defaults to 'All' magnitude. <br />📍 Earthquakes with &#8805; 6 magnitude.</p>
                         </FormGroup>
                     </Form>
                 </div>

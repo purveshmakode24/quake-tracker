@@ -108,11 +108,11 @@ class App extends Component {
     } else {
       if (this.state.filterData) {
         mapSection = <MapComponent quakes={this.state.filterData} />;
-        if(this.state.filterData.length == 0) {
+        if (this.state.filterData.length === 0) {
           alert("No earthquakes found. Apply different filters.");
         }
         console.log("filtered quake data executed");
-      } else {   
+      } else {
         mapSection = <MapComponent quakes={this.state.defaultEarthquakesData} />;
         console.log("default quake data executed");
       }

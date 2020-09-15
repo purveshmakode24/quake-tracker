@@ -8,7 +8,7 @@ Real-time Earthquake visualization app in React
 
 [https://www.quaketracker.gq](https://www.quaketracker.gq)
 
-## Hack-DCRUST IIC Hackathon
+## Hack-DCRUST IIC Hackathon 2020
 
 [https://devfolio.co/submissions/quaketracker](https://devfolio.co/submissions/quaketracker)
 
