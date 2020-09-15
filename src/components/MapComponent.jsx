@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { Map, TileLayer, Marker, Popup, AttributionControl } from 'react-leaflet';
-
 import { Icon } from "leaflet";
-
 
 
 class MapComponent extends Component {
@@ -57,7 +55,7 @@ class MapComponent extends Component {
         attributionControl={false}
       >
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-        <AttributionControl prefix="< /> w/ &#10084; by <a href='https://purveshmakode.com'>Purvesh Makode</a>" />
+        <AttributionControl prefix="< /> w/ &#10084; by <a href='https://www.purveshmakode.tk'>Purvesh Makode</a>" />
         {quakeFeaturesMarker}
       </Map >
     );

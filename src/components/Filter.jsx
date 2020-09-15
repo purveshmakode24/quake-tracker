@@ -62,17 +62,17 @@ class Filter extends Component {
                     <Form>
                         <FormGroup>
                             <CustomInput type="radio" id="magGreaterThan0" name="mag" value={-1} label="All" checked={parseInt(this.state.magnitudeFilter, 10) === -1} onChange={this.magnitudeChangeHandler} />
-                            <CustomInput type="radio" id="magGreaterThan3" name="mag" value={3.5} label="Magnitude > 3.5" checked={parseFloat(this.state.magnitudeFilter) === 3.5} onChange={this.magnitudeChangeHandler} />
-                            <CustomInput type="radio" id="magGreaterThan6" name="mag" value={6} label="Magnitude > 6" checked={parseInt(this.state.magnitudeFilter, 10) === 6} onChange={this.magnitudeChangeHandler} />
+                            <CustomInput type="radio" id="magGreaterThan3" name="mag" value={3.5} label="Magnitude &#8805; 3.5" checked={parseFloat(this.state.magnitudeFilter) === 3.5} onChange={this.magnitudeChangeHandler} />
+                            <CustomInput type="radio" id="magGreaterThan6" name="mag" value={6} label="Magnitude &#8805; 6" checked={parseInt(this.state.magnitudeFilter, 10) === 6} onChange={this.magnitudeChangeHandler} />
                         </FormGroup>
                         <hr />
                     </Form>
                     <Form>
                         <FormGroup>
-                            <CustomInput type="radio" id="last2days" name="timefilter" value={0} label="Last 30 Hours (≈ 2 days)" checked={parseInt(this.state.timeFilter, 10) === 0} onChange={this.timeChangeHandler} />
+                            <CustomInput type="radio" id="last2days" name="timefilter" value={0} label="Last 30 Hours" checked={parseInt(this.state.timeFilter, 10) === 0} onChange={this.timeChangeHandler} />
                             <CustomInput type="radio" id="lasthour" name="timefilter" value={3600000} label="Last Hour" checked={parseInt(this.state.timeFilter, 10) === 3600000} onChange={this.timeChangeHandler} />
                             <hr />
-                            <p className="filter__sec__notice">*defaults to 'last 30 hours (≈ 2 days)' <br />*defaults to 'All' magnitude <br />📍 Earthquakes with &gt;6 magnitude</p>
+                            <p className="filter__sec__notice">*Defaults to 'last 30 hours'. <br />*Defaults to 'All' magnitude. <br />📍 Earthquakes with &#8805; 6 magnitude.</p>
                         </FormGroup>
                     </Form>
                 </div>

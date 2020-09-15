@@ -78,9 +78,9 @@ class App extends Component {
       // console.log("time EPOCH for last hour:", new Date().getTime() - parseInt(data.timeFilter, 10));
 
       if (parseInt(data.timeFilter) === 0) {
-        filteredData = this.state.defaultEarthquakesData.filter(quake => quake.magnitude > data.magnitudeFilter);
+        filteredData = this.state.defaultEarthquakesData.filter(quake => quake.magnitude >= data.magnitudeFilter);
       } else {
-        filteredData = this.state.defaultEarthquakesData.filter(quake => quake.magnitude > data.magnitudeFilter && quake.time > new Date().getTime() - parseInt(data.timeFilter, 10));
+        filteredData = this.state.defaultEarthquakesData.filter(quake => quake.magnitude >= data.magnitudeFilter && quake.time >= new Date().getTime() - parseInt(data.timeFilter, 10));
       }
 
 
@@ -108,6 +108,9 @@ class App extends Component {
     } else {
       if (this.state.filterData) {
         mapSection = <MapComponent quakes={this.state.filterData} />;
+        if(this.state.filterData.length == 0) {
+          alert("No earthquakes found. Apply different filters.");
+        }
         console.log("filtered quake data executed");
       } else {   
         mapSection = <MapComponent quakes={this.state.defaultEarthquakesData} />;
