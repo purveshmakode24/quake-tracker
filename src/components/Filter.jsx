@@ -72,7 +72,7 @@ class Filter extends Component {
                             <CustomInput type="radio" id="last2days" name="timefilter" value={0} label="Last 30 Hours" checked={parseInt(this.state.timeFilter, 10) === 0} onChange={this.timeChangeHandler} />
                             <CustomInput type="radio" id="lasthour" name="timefilter" value={3600000} label="Last Hour" checked={parseInt(this.state.timeFilter, 10) === 3600000} onChange={this.timeChangeHandler} />
                             <hr />
-                            <p className="filter__sec__notice">*Defaults to 'Last 30 hours'. <br />*Defaults to 'All' magnitude. <br />📍 Earthquakes with &#8805; 6 magnitude.</p>
+                            <p className="filter__sec__notice">*Defaults to 'Last 30 Hours'. <br />*Defaults to 'All' magnitude. <br />&#128308; Earthquakes with &#8805; 6 magnitude. <br/> &#128992; Earthquakes with &#8805; 4 and &#60; 6 magnitude. <br/> &#128309; Earthquakes with &#60; 4 magnitude.</p>
                         </FormGroup>
                     </Form>
                 </div>
