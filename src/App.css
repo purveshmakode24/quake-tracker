@@ -21,7 +21,9 @@ code {
   padding: 1px;
 
   /*new */
-  position: relative;
+  position: fixed;
+  top: 0;
+  width: 100%;
   z-index: 2000;
   box-shadow: 0 1px 5px rgba(0,0,0,0.65);
 
@@ -29,21 +31,30 @@ code {
 
 .navbar__h1 {
   text-align: center;
-  padding-top: 8px;
+  padding-top: 20px;
+  font-size: 2.2rem;
 }
 
 .navbar__p {
   text-align: center;
-  margin-top: -8px;
+  margin-top: -10px;
+  font-size: 0.9rem;
 }
 
 .iframe {
   text-align: center;
+  margin-top: -4px;
   margin-bottom: 6px;
 }
 
+.leaflet-control-zoom {
+  position: fixed;
+  left: 30px;
+  bottom: 15vh;
+}
+
 .nav-followlnk-span {
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .nav-followlnk-span a {
@@ -74,21 +85,21 @@ code {
 }
 
 .filter_sec {
-  position: absolute;
-  z-index: 1000;
+  position: fixed;
+  z-index: 1001;
   background-color: rgba(29,161,242,1.0);
   padding: 70px 50px 5px 40px;
-  margin: 100px 0 0 10px;
+  margin: 200px 0 0 40px;
   box-shadow: 0 1px 5px rgba(0,0,0,0.65);
 }
 
 .toggle__filter {
-  position: absolute;
+  position: fixed;
   z-index: 2000;
   background-color: rgb(38, 38, 245);
   color:blanchedalmond;
   padding: 15px;
-  margin: 100px 0 0 10px;
+  margin: 200px 0 0 40px;
   box-shadow: 0 1px 5px rgba(0,0,0,0.65);
   border-radius: 0px 0px 25px 0px;
   cursor: pointer;
@@ -110,7 +121,6 @@ code {
 }
 
 .preloader {
-  /*padding: 10px;*/
   position: fixed;
   left: 0px;
   top: 0px;
@@ -126,7 +136,7 @@ code {
 }
 
 
-@media(max-width: 500px) {
+@media(max-width: 600px) {
   .navbar__h1 {
     font-size: 30px;
   }
@@ -136,4 +146,16 @@ code {
     margin-top: -5px;
   }
 
+  .filter_sec {
+    margin: 160px 0 0 15px;
+  }
+
+  .toggle__filter {
+    margin: 160px 0 0 15px;
+  }
+
+  .leaflet-control-zoom {
+    left: 5px;
+    bottom: 12vh;
+  }
 }
