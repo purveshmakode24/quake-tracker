@@ -46,7 +46,7 @@ class MapComponent extends Component {
             <Popup>
               <span className="popup__quaketime">{new Date(quake.time).toUTCString()}</span>
               <br />
-              <span className="quake__magnitude">{quake.magnitude}</span> magnitude earthquake. Near {quake.place}.
+              <span className="quake__magnitude__orange">{quake.magnitude}</span> magnitude earthquake. Near {quake.place}.
             Find more details <a href={quake.url}>here</a>
             </Popup>
           </Marker>

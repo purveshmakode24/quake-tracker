@@ -102,7 +102,7 @@ class App extends Component {
     let mapSection;
 
     if (!this.state.isLoaded) {
-      mapSection = <p className="preload_message">Loading...</p>;
+      mapSection = <div className="preloader"></div>;
     } else if (this.state.serverNotConnectedMsg) {
       mapSection = <p className="preload_message">{this.state.serverNotConnectedMsg}</p>;
     } else {

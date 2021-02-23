@@ -19,6 +19,12 @@ code {
 .quake_header {
   background-color: rgba(29,161,242,1.0);
   padding: 1px;
+
+  /*new */
+  position: relative;
+  z-index: 2000;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.65);
+
 }
 
 .navbar__h1 {
@@ -58,6 +64,11 @@ code {
   color: crimson;
 }
 
+.quake__magnitude__orange {
+  font-weight: bold;
+  color: orange;
+}
+
 .popup__quaketime {
   color: rgba(29,161,242,1.0);
 }
@@ -94,8 +105,20 @@ code {
 
 .filter__sec__notice {
   font-size: 12px;
-  padding-top: 18px;
+  padding-top: 12px;
   padding-bottom: 2px;
+}
+
+.preloader {
+  /*padding: 10px;*/
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url(assets/marker_preloader.gif) center no-repeat #fff;
+  background-size: 250px 250px;
 }
 
 .preload_message {
@@ -112,4 +135,5 @@ code {
     font-size: 12px;
     margin-top: -5px;
   }
+
 }
