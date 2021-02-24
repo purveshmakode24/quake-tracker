@@ -132,7 +132,10 @@ code {
 }
 
 .preload_message {
+  position: relative;
+  text-align: center;
   padding: 10px;
+  top: 50%;
 }
 
 

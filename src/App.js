@@ -104,7 +104,7 @@ class App extends Component {
     if (!this.state.isLoaded) {
       mapSection = <div className="preloader"></div>;
     } else if (this.state.serverNotConnectedMsg) {
-      mapSection = <p className="preload_message">{this.state.serverNotConnectedMsg}</p>;
+      mapSection = <div className="preload_message">{this.state.serverNotConnectedMsg}</div>;
     } else {
       if (this.state.filterData) {
         mapSection = <MapComponent quakes={this.state.filterData} />;
