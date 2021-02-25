@@ -6,7 +6,6 @@ import Header from './components/Header';
 import MapComponent from './components/MapComponent';
 import Filter from './components/Filter';
 
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -14,6 +13,7 @@ class App extends Component {
       defaultEarthquakesData: [],  // [{}, {}, {},----]
       filterData: '',
       serverNotConnectedMsg: '',
+      filterTimeFormat: 'gmt',
       isLoaded: false
     }
   }
@@ -26,7 +26,6 @@ class App extends Component {
         // this.setState({
         //   features: res.data.features      ////---> other and direct way to take and set whole features array and pass the 'features' as a props into MapComponent'.
         // });
-
 
         ////----> Below selectedData is a selected properties from a whole json data which returns a dictionary of each quake   
 
@@ -65,7 +64,6 @@ class App extends Component {
       })
   }
 
-
   // state data from child component (Filter.jsx)
   fetchDataFromFilterJsx = (data) => {
 
@@ -83,19 +81,17 @@ class App extends Component {
         filteredData = this.state.defaultEarthquakesData.filter(quake => quake.magnitude >= data.magnitudeFilter && quake.time >= new Date().getTime() - parseInt(data.timeFilter, 10));
       }
 
-
       // console.log("filterData:", filteredData);
       // console.log("filterDataLength:", filteredData.length);
 
       this.setState({
         filterData: filteredData,
+        filterTimeFormat: data.timeFormatFilter,
         isLoaded: true
       });
 
     });
   }
-
-
 
   render() {
 
@@ -107,17 +103,16 @@ class App extends Component {
       mapSection = <div className="preload_message">{this.state.serverNotConnectedMsg}</div>;
     } else {
       if (this.state.filterData) {
-        mapSection = <MapComponent quakes={this.state.filterData} />;
+        mapSection = <MapComponent quakes={this.state.filterData} filterTimeFormat={this.state.filterTimeFormat} />;
         if (this.state.filterData.length === 0) {
           alert("No earthquakes found. Apply different filters.");
         }
         console.log("filtered quake data executed");
       } else {
-        mapSection = <MapComponent quakes={this.state.defaultEarthquakesData} />;
+        mapSection = <MapComponent quakes={this.state.defaultEarthquakesData} filterTimeFormat={this.state.filterTimeFormat} />;
         console.log("default quake data executed");
       }
     }
-
 
     return (
       <div>
@@ -130,7 +125,6 @@ class App extends Component {
     )
   }
 }
-
 
 export default App;
 
